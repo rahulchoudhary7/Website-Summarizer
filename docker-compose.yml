@@ -1,0 +1,49 @@
+version: "3"
+services:
+
+  python_server:
+    ports:
+      # Exposes application port.
+      - "8000:8000"
+    build:
+      context: ./summarizer_py
+      dockerfile: ./deploy/Dockerfile
+      target: prod
+    image: summarizer_py:${SUMMARIZER_PY_VERSION:-latest}
+    networks:
+    - app_network
+    restart: always
+    env_file:
+      - ./summarizer_py/.env
+    environment:
+      SUMMARIZER_PY_HOST: 0.0.0.0
+
+  spring_server:
+    build:
+      context: ./summarizer
+      dockerfile: Dockerfile
+    ports:
+      - "3030:3030"
+    networks:
+      - app_network
+    depends_on:
+      - python_server
+  
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    networks:
+      - app_network
+    depends_on:
+      - spring_server
+
+      
+
+
+networks:
+  app_network:
+    driver: bridge
+

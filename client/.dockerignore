@@ -1,0 +1,32 @@
+#other folder
+credentials.json
+
+# Ignore typical Node.js development files
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignore build and development artifacts
+build/
+dist/
+coverage/
+*.log
+.log.
+*.test.js
+*.spec.js
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+
+
+# Ignore other temporary or generated files
+*.bak
+*.tmp
+.tmp.
