@@ -65,7 +65,7 @@ It crawls the website and summarizes it using OpenAl or any LLM endpoint.
  - Java
  - Spring boot
  - Python
- - Open AI
+ - Google Gemini
 
 
 
@@ -79,9 +79,11 @@ It crawls the website and summarizes it using OpenAl or any LLM endpoint.
 
 ### Docker Installation
 
-1. Ensure Docker is installed on your system. If not, download and install it from [Docker's official website](https://www.docker.com/get-started).
+1. Make a .env file in ./summarizer_py and add your Google Gemini API key to a variable named API_KEY
+   
+2. Ensure Docker is installed on your system. If not, download and install it from [Docker's official website](https://www.docker.com/get-started).
 
-2. Run the Docker Container
+3. Run the Docker Container
 
     ```bash
     docker compose up --build
