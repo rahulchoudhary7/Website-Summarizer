@@ -7,9 +7,7 @@ services:
       - "8000:8000"
     build:
       context: ./summarizer_py
-      dockerfile: ./deploy/Dockerfile
-      target: prod
-    image: summarizer_py:${SUMMARIZER_PY_VERSION:-latest}
+      dockerfile: Dockerfile
     networks:
     - app_network
     restart: always

@@ -23,8 +23,8 @@ public class ApiService {
     private HistoryRepo historyRepo;
 
     public String summarizeWebsite(String url) {
-        String fastApiUrl = "http://python_server:8000/api/summarize";
-//        String fastApiUrl = "http://localhost:8000/api/summarize";
+//        String fastApiUrl = "http://python_server:8000/api/summarize";
+        String fastApiUrl = "http://localhost:8000/api/summarize";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
